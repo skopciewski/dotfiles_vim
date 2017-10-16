@@ -1,0 +1,4 @@
+https://github.com/tomasr/molokai.git
+https://github.com/scrooloose/nerdtree.git
+https://github.com/vim-airline/vim-airline.git
+https://github.com/vim-airline/vim-airline-themes.git
