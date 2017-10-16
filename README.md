@@ -7,6 +7,7 @@ To check deps and install everything: `make install`
 ### Requirements
 
 * git
+* ack
 * configuration in:
   * `.vim/plugin/confgis/*.vim`
   * `~/.vimrc`

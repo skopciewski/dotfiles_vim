@@ -19,7 +19,7 @@ check_cmd_%:
 # for vim
 prepare_vim: check_vim_deps deploy_vim_configs $(VIM_PACK_DIR)
 
-check_vim_deps: check_cmd_git
+check_vim_deps: check_cmd_git check_cmd_ack
 
 deploy_vim_configs: $(VIM_PLUGIN_DIR) $(VIM_CONFIG)
 
