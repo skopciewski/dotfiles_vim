@@ -17,7 +17,7 @@ check_cmd_%:
 	fi
 
 # for vim
-prepare_vim: check_vim_deps deploy_vim_configs $(VIM_PACK_DIR)
+prepare_vim: check_vim_deps deploy_vim_configs manage_vim_plugins
 
 check_vim_deps: check_cmd_git check_cmd_ack
 
@@ -25,16 +25,21 @@ deploy_vim_configs: $(VIM_PLUGIN_DIR) $(VIM_CONFIG)
 
 $(VIM_PLUGIN_DIR): plugin/configs/*.vim
 	@mkdir -p $@
-	@cp -r plugin/ $@
+	@cp -r plugin/* $@
 
-$(VIM_PACK_DIR): clean_plugins vim_plugins.txt
+manage_vim_plugins: $(VIM_PACK_DIR) clean_plugins install_plugins
+
+$(VIM_PACK_DIR):
 	@mkdir -p $@
+
+install_plugins: vim_plugins.txt
 	@for plugin in $$(cat ./vim_plugins.txt); do \
 		echo "*** Installing: $${plugin} ***"; \
 		$$(cd $(VIM_PACK_DIR) && git clone $${plugin} 2>/dev/null || true); \
 	done
 
-clean_plugins:
+
+clean_plugins: vim_plugins.txt
 	@for name in $$(find $(VIM_PACK_DIR) -maxdepth 1 -mindepth 1 -exec basename {} \;); do \
 		if ! grep -q "$${name}.git$$" ./vim_plugins.txt; then \
 			echo "*** Removing: $${name} ***"; \
@@ -42,4 +47,4 @@ clean_plugins:
 		fi; \
 	done
 
-.PHONY: install prepare_vim check_vim_deps deploy_vim_configs clean_plugins
+.PHONY: install prepare_vim check_vim_deps deploy_vim_configs manage_vim_plugins install_plugins clean_plugins
