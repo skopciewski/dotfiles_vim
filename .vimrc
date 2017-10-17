@@ -71,5 +71,9 @@ map <Leader>/ :nohlsearch<cr>
 " up/down on displayed lines, not real lines. More useful than painful.
 noremap j gj
 noremap k gk
+
 " After 4s of inactivity, check for external file modifications on next keyrpress
 au CursorHold,WinEnter,TabEnter * checktime
+
+" Enable spell-check on specific files.
+autocmd filetype html,markdown,gitcommit setlocal spell
