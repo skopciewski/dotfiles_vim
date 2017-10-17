@@ -31,3 +31,8 @@ let g:better_whitespace_enabled = 0
 let g:strip_whitespace_on_save = 1
 let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'unite', 'qf', 'help']
 
+" for gitgutter
+highlight GitGutterAdd ctermbg=darkgreen ctermfg=black
+highlight GitGutterChange ctermbg=darkyellow ctermfg=black
+highlight GitGutterDelete ctermbg=darkred ctermfg=black
+highlight GitGutterChangeDelete ctermbg=gray ctermfg=black
