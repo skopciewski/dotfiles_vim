@@ -22,7 +22,11 @@ prepare_vim: check_vim_deps deploy_vim_configs download_vim_dics manage_vim_plug
 
 check_vim_deps: check_cmd_git check_cmd_ack check_cmd_curl
 
-deploy_vim_configs: $(VIM_PLUGIN_DIR) $(VIM_CONFIG)
+deploy_vim_configs: $(VIM_DIR) $(VIM_PLUGIN_DIR) $(VIM_CONFIG)
+
+$(VIM_DIR):
+	mkdir -p $(VIM_DIR)/swap
+	mkdir -p $(VIM_DIR)/undo
 
 $(VIM_PLUGIN_DIR): plugin/configs/*.vim plugin/*.vim
 	@mkdir -p $@
