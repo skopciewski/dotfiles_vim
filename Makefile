@@ -36,7 +36,7 @@ download_vim_dics: $(VIM_SPELL_DIR)/pl.utf-8.spl $(VIM_SPELL_DIR)/en.utf-8.spl
 
 $(VIM_SPELL_DIR)/%: $(VIM_SPELL_DIR)
 	@echo "*** Install lang packs ***"
-	@curl -o $@ -fsSL "ftp://ftp.vim.org/pub/vim/runtime/spell/$*"
+	@curl -o $@ -fsSL "http://ftp.vim.org/pub/vim/runtime/spell/$*"
 
 $(VIM_SPELL_DIR):
 	@mkdir -p $@
