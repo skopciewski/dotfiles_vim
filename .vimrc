@@ -77,6 +77,3 @@ noremap k gk
 
 " After 4s of inactivity, check for external file modifications on next keyrpress
 au CursorHold,WinEnter,TabEnter * checktime
-
-" Enable spell-check on specific files.
-autocmd filetype html,markdown,gitcommit setlocal spell
