@@ -34,7 +34,7 @@ $(VIM_DIR):
 
 $(VIM_PLUGIN_DIR): plugin/configs/*.vim plugin/*.vim
 	@mkdir -p $@
-	@cp -r plugin/* $@
+	@cp -v -r plugin/* $@
 
 download_vim_dics: $(VIM_SPELL_DIR)/pl.utf-8.spl $(VIM_SPELL_DIR)/en.utf-8.spl
 .PHONY: deploy_vim_configs
@@ -71,7 +71,6 @@ update_plugins: $(VIM_PACK_DIR) vim_plugins.txt
 		cd $${path} && git pull; \
 	done
 .PHONY: update_plugins
-
 
 $(VIM_PACK_DIR):
 	@mkdir -p $@
