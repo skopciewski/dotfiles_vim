@@ -1,5 +1,5 @@
 https://github.com/tpope/vim-sensible.git
-https://github.com/tomasr/molokai.git
+https://github.com/sainnhe/gruvbox-material.git
 https://github.com/vim-airline/vim-airline.git
 https://github.com/vim-airline/vim-airline-themes.git
 https://github.com/scrooloose/nerdtree.git
