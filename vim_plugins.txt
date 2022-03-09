@@ -15,5 +15,7 @@ https://github.com/tpope/vim-repeat.git
 https://github.com/ntpeters/vim-better-whitespace.git
 https://github.com/airblade/vim-gitgutter.git
 https://github.com/mzlogin/vim-markdown-toc.git
+https://github.com/jgdavey/tslime.vim.git
 https://github.com/vimwiki/vimwiki.git
+https://github.com/dense-analysis/ale.git
 https://github.com/sheerun/vim-polyglot.git
