@@ -32,7 +32,7 @@ $(VIM_DIR):
 	mkdir -p $(VIM_DIR)/swap
 	mkdir -p $(VIM_DIR)/undo
 
-$(VIM_PLUGIN_DIR): plugin/configs/*.vim plugin/*.vim
+$(VIM_PLUGIN_DIR): plugin/base/*.vim
 	@mkdir -p $@
 	@cp -v -r plugin/* $@
 
