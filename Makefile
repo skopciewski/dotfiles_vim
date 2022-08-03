@@ -74,4 +74,3 @@ update_plugins: $(VIM_PACK_DIR) vim_plugins.txt
 
 $(VIM_PACK_DIR):
 	@mkdir -p $@
-
