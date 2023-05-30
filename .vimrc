@@ -69,6 +69,8 @@ setlocal fo-=t fo+=croql
 let mapleader = ","
 " local leader to backslash. (local leader is used for only specific file types)
 let maplocalleader = "\\"
+" highlit world under the cursor
+map <Leader>* :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
 " clear search highlight
 map <Leader>/ :nohlsearch<cr>
 " up/down on displayed lines, not real lines. More useful than painful.
