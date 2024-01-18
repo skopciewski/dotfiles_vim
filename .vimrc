@@ -71,6 +71,8 @@ let mapleader = ","
 let maplocalleader = "\\"
 " highlit world under the cursor
 map <Leader>* :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
+" search selected text
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 " clear search highlight
 map <Leader>/ :nohlsearch<cr>
 " up/down on displayed lines, not real lines. More useful than painful.
