@@ -79,7 +79,7 @@ map <Leader>/ :nohlsearch<cr>
 noremap j gj
 noremap k gk
 " copy to clipboard with xclip
-vnoremap <silent><Leader>y "yy <Bar> :call system('xclip', @y)<CR>
+vnoremap <silent><Leader>y "yy <Bar> :call system('wl-copy', @y)<CR>
 
 " After 4s of inactivity, check for external file modifications on next keyrpress
 au CursorHold,WinEnter,TabEnter * checktime
